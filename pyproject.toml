@@ -1,0 +1,47 @@
+[tool.isort]
+
+profile           = "black"
+known_first_party = "wf"
+forced_separate   = "wf"
+skip              = [
+  ".eggs",
+  ".git",
+  ".hg",
+  ".mypy_cache",
+  ".nox",
+  ".pants.d",
+  ".tox",
+  ".venv",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "node_modules",
+  "venv",
+]
+
+
+[tool.black]
+
+target-version = ["py36"]
+
+exclude       = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+
+[build-system]
+
+requires      = ["setuptools>=44.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
